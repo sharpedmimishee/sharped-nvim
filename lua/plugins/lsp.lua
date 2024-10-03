@@ -16,10 +16,10 @@ return {
     {
         "rafamadriz/friendly-snippets",
         lazy = true,
+        event = "InsertEnter",
     },
     {
         "L3MON4D3/LuaSnip",
-        dependencies = { "rafamadriz/friendly-snippets" },
         event = "InsertEnter",
         lazy = true,
         branch = "master",

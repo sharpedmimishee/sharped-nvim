@@ -92,11 +92,36 @@ c.rust_analyzer.setup({
         },
     },
 })
+c.ts_ls.setup({
+    capabilities = ca,
+    settings = {
+        ['ts_ls'] = {},
+    },
+})
+c.csharp_ls.setup({
+    capabilities = ca,
+    settings = {
+        ['csharp_ls'] = {},
+    },
+})
 c.lua_ls.setup({
     capabilities = ca,
     settings = {
         ['lua_ls'] = {},
     },
+})
+c.gopls.setup({
+    capabilities = ca,
+    cmd = {"gopls"},
+    settings = {
+    gopls = {
+      analyses = {
+        unusedparams = true,
+      },
+      staticcheck = true,
+      gofumpt = true,
+    },
+  },
 })
 require("lspsaga").setup({
     border_style = "single",

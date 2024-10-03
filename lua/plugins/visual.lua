@@ -28,6 +28,7 @@ return {
 	{
 		"nvim-lualine/lualine.nvim",
 		lazy = true,
+        dependencies = "luanium.nvim",
 		event = "VeryLazy",
         config = function()
             require("configs.lualine")

@@ -1,5 +1,7 @@
 vim.api.nvim_set_var('mapleader', ' ')
+
 vim.keymap.set('n', 'cl', "<CMD>colorscheme luanium<CR>")
+vim.keymap.set('n', '<leader>r', "<CMD>luafile %<CR>")
 local builtin = require('telescope.builtin')
 vim.keymap.set('n', '<leader>ff', builtin.find_files, {})
 vim.keymap.set('n', '<leader>fg', builtin.live_grep, {})

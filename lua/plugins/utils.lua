@@ -16,15 +16,10 @@ return {
 		"nvim-lua/plenary.nvim",
 		lazy = true
 	},
-	{ 
-		'nvim-telescope/telescope-fzf-native.nvim', 
-		lazy = true,
-		build = 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release' 
-	},
 	{
 		"nvim-telescope/telescope.nvim",
 		lazy = true,
-		dependencies = {"nvim-lua/plenary.nvim", 'nvim-telescope/telescope-fzf-native.nvim'},
+		dependencies = {"nvim-lua/plenary.nvim"},
 		branch = "master",
 		keys = {
 			{"<leader>ff", mode="n"},
@@ -39,12 +34,12 @@ return {
 	{
 		"nvim-tree/nvim-web-devicons",
 		lazy = true,
+        event = "VimEnter",
 	},
 	{
 		"stevearc/oil.nvim",
 		lazy = true,
 		event = "VimEnter",
-		dependencies = {"nvim-tree/nvim-web-devicons"},
 		keys = {{"<leader>c", "<CMD>Oil<CR>", mode="n", desc="Open parent directory"}},
 		cmd = {"Oil"},
 		config = function()
@@ -61,11 +56,17 @@ return {
 			require("configs.toggleterm")
 		end
 	},
+    {
+        "folke/trouble.nvim",
+        lazy = true,
+        keys = {{"<leader>v", "<CMD>Trouble diagnostics toggle<CR>", mode="n", desc="Open/Close trouble.nvim"}},
+        cmd = "Trouble",
+        config = true,
+    },
 	{
 		"folke/which-key.nvim",
 		lazy = true,
 		event = "VimEnter",
-		depedencies = {"nvim-tree/nvim-web-devicons"},
 		keys = {
 			{
 				"<leader>?",
